@@ -2,6 +2,11 @@ from letras import letras
 
 
 def contador (quantidadeJogadores):
+    jogador1Rodada =0
+    jogador2Rodada =0
+    jogador3Rodada =0
+    jogador4Rodada =0
+        
     jogador1 =0
     jogador2 =0
     jogador3 =0
@@ -12,48 +17,66 @@ def contador (quantidadeJogadores):
             print("Caso seja uma palavra dupla precione 2.\n")
             print("Caso seja uma palavra Tripla precione 3. \n")
             palavraEspecial = int(input("Caso não seja nenhuma das duas precione 0: "))
-        for l in range(0,len(palavra)):
+        for l in range(0,len(palavra)): #soma a pontuação de cada jogador em cada rodada
             if c ==1:
-                jogador1+=letras.valorLetras[palavra[l]]
+                jogador1Rodada+=letras.valorLetras[palavra[l]]
             if c ==2:
-                jogador2+= letras.valorLetras[palavra[l]]
+                jogador2Rodada+= letras.valorLetras[palavra[l]]
             if c ==3:
-                jogador3+= letras.valorLetras[palavra[l]]
+                jogador3Rodada+= letras.valorLetras[palavra[l]]
             if c ==4:
-                jogador4+= letras.valorLetras[palavra[l]]
+                jogador4Rodada+= letras.valorLetras[palavra[l]]
+        #adciona 
         if palavraEspecial==0:
             pass
         if c==1:
             if palavraEspecial==0:
                 pass
             if palavraEspecial==2:
-                jogador1*=2
+                jogador1Rodada*=2
             if palavraEspecial==3:
-                jogador1*=3
+                jogador1Rodada*=3
         if c==2:
             if palavraEspecial==0:
                 pass
             if palavraEspecial==2:
-                jogador2*=2
+                jogador2Rodada*=2
             if palavraEspecial==3:
-                jogador2*=3
+                jogador2Rodada*=3
         if c==3:
             if palavraEspecial==0:
                 pass
             if palavraEspecial==2:
-                jogador3*=2
+                jogador3Rodada*=2
             if palavraEspecial==3:
-                jogador3*=3      
+                jogador3Rodada*=3      
         if c==4:
             if palavraEspecial==0:
                 pass
             if palavraEspecial==2:
-                jogador4*=2
+                jogador4Rodada*=2
             if palavraEspecial==3:
-                jogador4*=3
+                jogador4Rodada*=3
         
-        
-            
+        jogador1+= jogador1Rodada
+        jogador2+= jogador2Rodada
+        jogador3+= jogador3Rodada
+        jogador4+= jogador4Rodada
+        jogador1Rodada = 0
+        jogador2Rodada = 0
+        jogador3Rodada = 0
+        jogador4Rodada = 0
+        bingo = input("Teve bingo?(S/N)")
+        if bingo=="S":
+            qualJogador = int(input("Qual é  o numero do jogador que teve bingo?"))
+            if qualJogador == 1:
+                jogador1+=50
+            if qualJogador == 1:
+                jogador2+=50
+            if qualJogador == 1:
+                jogador3+=50
+            if qualJogador == 1:
+                jogador4+=50
         fimJogo = input("O jogo acabou?(s/n)")
         if fimJogo== "s":
             if quantidadeJogadores==1:
