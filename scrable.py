@@ -3,8 +3,3 @@ from contador import contador
 
 quantidadeJogadores = int(input("quantos jogadores serão? "))
 contador(quantidadeJogadores)
-                
-
-
-    
-
