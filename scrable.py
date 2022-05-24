@@ -1,3 +1,4 @@
+from turtle import clear
 from letras import letras
 from contador import contador
 
